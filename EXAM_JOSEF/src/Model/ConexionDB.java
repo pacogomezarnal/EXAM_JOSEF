@@ -28,7 +28,7 @@ public class ConexionDB {
 	//Instancia unica
 	private static ConexionDB instance = null;
 	
-	private ConexionDB(String HOST,String BBDD,String USER,String PASS) {
+	public ConexionDB(String HOST,String BBDD,String USER,String PASS) {
 		this.host=HOST;
 		this.bbdd=BBDD;
 		this.user=USER;
@@ -39,7 +39,7 @@ public class ConexionDB {
 	//Implementar SingleTon
 	public static ConexionDB getInstance(String HOST,String BBDD,String USER,String PASS) {
 	      if(instance == null) {
-	         instance = null;
+	         instance = new ConexionDB(HOST,BBDD,USER,PASS);;
 	      }
 	      return instance;
 	   }
